@@ -1,0 +1,19 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="edu.ben.models.User"%>
+
+
+
+<%
+	if (session.getAttribute("user") != null) {%>
+		<label class='nav-link'><a href='/CMSC374Lab4/ViewUsers'>USERS</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+		<label class='nav-link'><a href='/CMSC374Lab4/Add'>ADD USER</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+		<label class='nav-link'><a href='/CMSC374Lab4/AddUsers'>ADD USERS</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+		<label class="nav-link"><a href="/CMSC374Lab4/ViewProducts">PRODUCTS</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+		<label class='nav-link'><a href='/CMSC374Lab4/AddProduct'>ADD PRODUCT</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+		<label class='nav-link'><a href='/CMSC374Lab4/AddProducts'>ADD PRODUCTS</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+		<label class='nav-link'><a href='/CMSC374Lab4/Orders'>ORDERS</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+		<label class='nav-link'><a href='/CMSC374Lab4/ChangePassword'>CHANGE PWD</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+		<label class='nav-link'><a href='/CMSC374Lab4/Logout'>SIGN OUT</a></label>
+	<%} else {%>
+		<label class='nav-link'><a href='/CMSC374Lab4/Login'>LOG IN</a>&nbsp;&nbsp;|&nbsp;&nbsp;</label>
+	<%}%>

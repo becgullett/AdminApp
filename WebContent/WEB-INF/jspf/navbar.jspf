@@ -1,0 +1,29 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="edu.ben.models.User"%>
+
+
+<%
+	User currentUser = (User) session.getAttribute("user");
+	String name = "";
+	if (currentUser != null) {
+		name = currentUser.getUsername();
+	}
+%>
+
+
+<div class="navbar background">
+	<div class="disc-drop-nav">
+		<a href="${pageContext.request.contextPath}/home">DISC DROP</a>
+	</div>
+	<%
+		if (currentUser != null) {
+			out.print("<div class='music-shop-nav'>WELCOME " + name.toUpperCase() + "!</div>");
+		} else {
+			out.print("<div class='music-shop-nav'>WELCOME TO OUR SHOP!</div>");
+		}
+	%>
+
+	<div class="navbar-links">
+		<%@ include file="navlinks.jspf"%>
+	</div>
+</div>
